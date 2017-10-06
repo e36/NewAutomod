@@ -1,3 +1,3 @@
-# NewAutomod
+###A.S.K.R.E.D.D.I.T.
 
-### CoolAutomod
+#Awesome Super Kewl Robot that Either Destroys or Disintegrates Illicit Trolls
