@@ -5,6 +5,7 @@ def comment_handler(q):
         print(comment)
         print("")
 
+
 def submission_handler(q):
     while True:
         submission = q.get()

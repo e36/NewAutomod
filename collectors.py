@@ -1,8 +1,10 @@
 import praw
 
-def comment_scraper_entrypoint( queue, resume=None, lastid=None):
+
+def comment_scraper_entrypoint(queue, resume=None, lastid=None):
     for comment in comment_gen(resume, lastid):
         queue.put(comment)
+
 
 def comment_gen(resume=None, lastid=None):
     reddit = make_reddit()
@@ -20,6 +22,7 @@ def submission_scraper_entrypoint( queue, resume=None, lastid=None):
     for submission in submission_gen(resume, lastid):
         queue.put(submission)
 
+
 def submission_gen( resume=None, lastid=None):
     reddit = make_reddit()
     ar = reddit.subreddit("AskReddit")
@@ -32,7 +35,7 @@ def submission_gen( resume=None, lastid=None):
         yield submission
 
 
-#ar = reddit.subreddit("AskReddit")
+# ar = reddit.subreddit("AskReddit")
 def make_reddit():
     reddit = praw.Reddit(client_id='***',
                         client_secret='***',

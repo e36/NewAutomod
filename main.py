@@ -1,9 +1,18 @@
+import configparser
 import multiprocessing as mp
 from collectors import comment_scraper_entrypoint, submission_scraper_entrypoint
 from handlers import comment_handler, submission_handler
 
-
 if __name__ == "__main__":
+
+    # init configparser and read the config file
+    # probably wrap some error handling around this
+    config = configparser.ConfigParser()
+    config.read('config')
+
+    general_config = config['General']
+    worker_config = config['Workers']
+
     comments_queue = mp.Queue(1000)
     submissions_queue = mp.Queue(1000)
 
